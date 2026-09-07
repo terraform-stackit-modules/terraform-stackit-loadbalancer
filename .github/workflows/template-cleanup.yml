@@ -1,0 +1,32 @@
+name: Template Cleanup
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  cleanup:
+    name: Cleanup template artifacts
+    runs-on: ubuntu-latest
+    # Only runs once, when the repository is first created from the template
+    if: github.repository != 'terraform-stackit-modules/terraform-repo-template'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Remove TEMPLATE ONLY section from .header.md
+        run: |
+          sed -i '/<!-- TEMPLATE ONLY/,/<!-- END TEMPLATE ONLY -->/d' .header.md
+
+      - name: Remove TEMPLATE_USAGE.md
+        run: rm -f TEMPLATE_USAGE.md
+
+      - name: Commit cleanup
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: remove template artifacts [skip ci]"
+          file_pattern: ".header.md TEMPLATE_USAGE.md"
