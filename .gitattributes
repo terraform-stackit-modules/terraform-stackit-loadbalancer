@@ -1,0 +1,37 @@
+# Normalize line endings across platforms.
+* text=auto eof=lf
+
+# ---------------------------------------------------------------------------
+# export-ignore: files stripped from the release archive
+# (git archive and the source zip/tarball GitHub auto-generates for a tag).
+# This does NOT affect version control or CI, which check out the repo itself.
+# Goal: ship a lean package containing only the consumable module.
+# ---------------------------------------------------------------------------
+
+# CI / GitHub plumbing
+.github/                export-ignore
+
+# Tests (contains test/.env with real secrets — must never reach the archive)
+test/                   export-ignore
+
+# Quality / lint / secret-scan tooling
+.hooks/                 export-ignore
+.tfsec/                 export-ignore
+.tflint.hcl             export-ignore
+.terraform-docs.yaml    export-ignore
+.header.md              export-ignore
+docs/                   export-ignore
+.secrets.baseline       export-ignore
+.editorconfig           export-ignore
+
+# Release / semantic-release configuration
+.releaserc.json         export-ignore
+
+# Agent / template metadata
+AGENTS.md               export-ignore
+TEMPLATE_USAGE.md       export-ignore
+
+# Git metadata
+.gitignore              export-ignore
+.gitattributes          export-ignore
+.pre-commit-config.yaml export-ignore
