@@ -6,14 +6,14 @@ This document describes the steps to follow after creating a new repository from
 
 ### Repository setup
 
-- [ ] Rename the repository to `terraform-stackit-<resource>` (e.g. `terraform-stackit-network`)
-- [ ] Update the repository description on GitHub
-- [ ] Add the repository to the `CODEOWNERS` file with the correct team
-- [ ] Configure the `SEMANTIC_RELEASE_TOKEN` secret in the repository settings
+- [x] Rename the repository to `terraform-stackit-<resource>` (e.g. `terraform-stackit-network`)
+- [x] Update the repository description on GitHub
+- [x] Add the repository to the `CODEOWNERS` file with the correct team
+- [x] Configure the `SEMANTIC_RELEASE_TOKEN` secret in the repository settings
 
 ### File updates
 
-- [ ] Replace all occurrences of `MODULE_NAME` with the actual module name
+- [x] Replace all occurrences of `MODULE_NAME` with the actual module name
   - `.github/contributing.md` (x2)
 - [ ] Update `AGENTS.md` with the module-specific context (resources, variables, outputs)
 - [ ] Update `examples/basic/main.tf` with a working example
