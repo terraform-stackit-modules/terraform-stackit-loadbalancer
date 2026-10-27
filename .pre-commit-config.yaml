@@ -47,6 +47,6 @@ repos:
           - '--baseline'
           - '.secrets.baseline'
           - '--plugin'
-          - 'detect_secrets_plugins/stackit.py'
+          - '.hooks/detect_secrets/stackit.py'
           - '--disable-filter'
           - 'detect_secrets.filters.heuristic.is_potential_uuid'
