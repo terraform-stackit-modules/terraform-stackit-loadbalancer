@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.0 (2026-10-27)
+
+### Features
+
+* **loadbalancer:** add unified network/application load balancer module ([37ae8c3](https://github.com/terraform-stackit-modules/terraform-stackit-loadbalancer/commit/37ae8c3923bfae9a5ebf27c9b5dd00aa7b680273))
+
 ## 1.0.0 (2026-09-04)
 
 ### Features
